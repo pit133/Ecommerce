@@ -1,0 +1,16 @@
+.button {
+  background-color: var(--color-black);
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  color: var(--color-white);
+  font-family: var(--font-family-base), serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.sign-button {
+  width: 40px;
+  font-size: 24px;
+}

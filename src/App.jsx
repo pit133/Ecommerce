@@ -1,7 +1,9 @@
+import Button from './components/Button/Button';
 const App = () => {
   return (
     <div>
-      <h1>App</h1>
+      <Button content='Apply Filters'/>
+      <Button content='+' signButton={true} />
     </div>
   )
 }
