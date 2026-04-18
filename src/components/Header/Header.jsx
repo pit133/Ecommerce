@@ -59,9 +59,9 @@ const Header = (props) => {
               <path
                 d="M0.833496 0.833334H2.50016L4.71683 11.1833C4.79814 11.5624 5.00905 11.9012 5.31326 12.1415C5.61746 12.3819 5.99592 12.5086 6.3835 12.5H14.5335C14.9128 12.4994 15.2806 12.3694 15.576 12.1315C15.8715 11.8937 16.0769 11.5621 16.1585 11.1917L17.5335 5H3.39183"
                 stroke="#0A0A0A"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.66667"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>}
           />
@@ -77,16 +77,16 @@ const Header = (props) => {
               <path
                 d="M15.8332 17.5V15.8333C15.8332 14.9493 15.482 14.1014 14.8569 13.4763C14.2317 12.8512 13.3839 12.5 12.4998 12.5H7.49984C6.61578 12.5 5.76794 12.8512 5.14281 13.4763C4.51769 14.1014 4.1665 14.9493 4.1665 15.8333V17.5"
                 stroke="#0A0A0A"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.66667"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M9.99984 9.16667C11.8408 9.16667 13.3332 7.67428 13.3332 5.83333C13.3332 3.99238 11.8408 2.5 9.99984 2.5C8.15889 2.5 6.6665 3.99238 6.6665 5.83333C6.6665 7.67428 8.15889 9.16667 9.99984 9.16667Z"
                 stroke="#0A0A0A"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.66667"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             }
