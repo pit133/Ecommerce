@@ -1,9 +1,11 @@
 :root {
   --color-black: #030213;
   --color-gray: #717182;
+  --color-dark-gray: #0000001A;
   --color-light-gray:#F3F3F5;
   --color-red: #D4183D;
   --color-white: #FFFFFF;
+
 
   --font-family-base: 'Fira Sans Condensed', sans-serif;
 }

@@ -3,7 +3,7 @@ import './IconButton.css'
 const IconButton = (props) => {
   return (
     <div className='iconButton'>
-      <a
+      <a className="iconButton-link"
         href="#"
       >
         {props.icon}
