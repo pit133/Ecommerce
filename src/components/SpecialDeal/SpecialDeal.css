@@ -1,0 +1,29 @@
+.special-deal {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.special-deal__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.h1 {
+  font-size: 18px;
+}
+
+.special-deal__offer{
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-right: 40px;
+}
+
+.special-deal__button{
+  display: flex;
+  justify-content: end;
+}
