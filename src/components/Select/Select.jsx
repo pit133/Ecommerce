@@ -1,10 +1,11 @@
 import "./Select.css"
 const Select = (props) => {
 
-  const {className} = props
+  const {className, label} = props
 
   return (
-    <form>
+    <>
+      <label>{label}</label>
       <select className={`select ${className}`} id="car" name="car">
         <option className="hidden" value=""></option>
         <option value="tsl">TSL</option>
@@ -13,7 +14,7 @@ const Select = (props) => {
         <option value="sony">Sony</option>
         <option value="samsung">Samsung</option>
       </select>
-    </form>
+    </>
   )
 }
 

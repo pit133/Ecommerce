@@ -3,6 +3,7 @@
   border-radius: 10px;
   border: 1px var(--color-dark-gray) solid;
   padding-left: 12px;
+  width: 100%;
 }
 
 .input::placeholder{

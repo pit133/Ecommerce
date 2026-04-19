@@ -1,14 +1,15 @@
 import Header from "../../components/Header/Header";
-import Select from "../../components/Select/Select";
-import Input from "../../components/Input/Input";
+import Filter from "../../components/Filter/Filter";
 
 const TVPage = (props) => {
+  const {className} = props;
   return (
-    <>
+    <div className="container">
       <Header />
-      <Select />
-      <Input placeholder={"5000"}/>
-    </>
+      <main>
+        <Filter />
+      </main>
+    </div>
   )
 }
 
