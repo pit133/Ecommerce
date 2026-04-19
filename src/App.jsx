@@ -1,10 +1,9 @@
-import Button from './components/Button/Button';
-import IconButton from "./components/IconButton/IconButton";
-import Header from "./components/Header/Header";
+import TVPage from "./pages/TVpage/TVPage";
 const App = () => {
   return (
     <div>
-      <Header />
+      <TVPage />
+
     </div>
   )
 }
