@@ -200,3 +200,5 @@ const products = [{
   isSpecialOffer: true,
   brand: "Acer"
 },];
+
+export default products

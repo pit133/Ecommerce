@@ -1,18 +1,19 @@
 import "./Select.css"
 const Select = (props) => {
 
-  const {className, label} = props
+  const {className, label, options} = props
 
   return (
     <>
       <label>{label}</label>
-      <select className={`select ${className}`} id="car" name="car">
+      <select className={`select ${className}`} id="label" name="label">
         <option className="hidden" value=""></option>
-        <option value="tsl">TSL</option>
-        <option value="lg">LG</option>
-        <option value="hisense">Hisense</option>
-        <option value="sony">Sony</option>
-        <option value="samsung">Samsung</option>
+        {/*<option className="hidden" value="">Выберите вариант</option>*/}
+        {options?.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
       </select>
     </>
   )

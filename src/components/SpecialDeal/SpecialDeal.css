@@ -1,4 +1,5 @@
 .special-deal {
+  position: relative;
   background-color: var(--color-red);
   color: var(--color-white);
   padding: 16px;
@@ -16,14 +17,24 @@
   font-size: 18px;
 }
 
-.special-deal__offer{
+.special-deal__offer {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   padding-right: 40px;
 }
 
-.special-deal__button{
+.special-deal__button {
+  position: absolute;
+  top: 2%;
+  left: 90%;
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 5px;
+  /*width: 31px;*/
+  /*height: 31px;*/
 }

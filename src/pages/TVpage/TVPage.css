@@ -1,3 +1,17 @@
 .tvpage {
 
 }
+
+.main{
+  display: flex;
+  gap: 24px;
+
+}
+
+.aside{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 20%;
+}
+

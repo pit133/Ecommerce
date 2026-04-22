@@ -1,11 +1,13 @@
 .button {
   background-color: var(--color-black);
   border-radius: 10px;
+  border: none;
   color: var(--color-white);
   font-family: var(--font-family-base), serif;
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
+  height: 40px;
 }
 
 .sign-button {

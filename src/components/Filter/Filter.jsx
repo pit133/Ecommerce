@@ -4,24 +4,26 @@ import "./Filter.css"
 import Button from "../Button/Button";
 
 const Filter = (props) => {
+  const {className, selectOptions} = props;
   return (
-    <div className="filter">
+    <div className={`${className} filter`}>
       <h1>Filters</h1>
       <form className="filter__form">
           <div className="filter__input">
             <Select
               className="filter__select"
               label="Brand"
+              options={props.selectOptions}
             />
           </div>
           <div className="filter__input">
             <label>Price range</label>
             <div className="filter__input-price">
-              <Input />
-              <Input />
+              <Input placeholder="0"/>
+              <Input placeholder="5000"/>
             </div>
           </div>
-          <Button className="filter__button" content="Apply Filters" />
+          <Button content="Apply Filters" />
       </form>
     </div>
   )

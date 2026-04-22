@@ -1,0 +1,23 @@
+
+.products__head{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+.products__select{
+  width: 176px;
+  height: 48px;
+}
+
+.products__count {
+  font-size: 16px;
+  color: var(--color-gray);
+}
+
+.products__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  max-height: 1066px;
+}

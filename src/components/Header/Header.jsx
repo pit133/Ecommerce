@@ -4,7 +4,7 @@ import IconButton from "../IconButton/IconButton";
 const Header = (props) => {
   return (
     <header className="header">
-      <div className="header__container">
+      <div className="container header__container">
         <div className="header__inner">
           <div className="header__logo">
             <svg

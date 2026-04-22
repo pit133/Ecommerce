@@ -1,10 +1,10 @@
 import './Button.css'
 
 const Button = (props) => {
-  const {className, content} = props;
+  const {className, content, onClick} = props;
   return (
       <>
-      <button className={props.signButton ? 'button sign-button':'button'}>
+      <button className={`${className} button`} onClick={onClick}>
         {props.content}
       </button>
       </>

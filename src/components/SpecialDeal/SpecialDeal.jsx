@@ -4,7 +4,7 @@ const SpecialDeal = (props) => {
   const {time, className} = props;
   return (
     <div className={`special-deal ${className}`}>
-      <buton className="special-deal__button">
+      <button className="special-deal__button">
         <svg
           width="16"
           height="16"
@@ -27,7 +27,7 @@ const SpecialDeal = (props) => {
             strokeLinejoin="round"
           />
         </svg>
-      </buton>
+      </button>
       <div className="special-deal__text">
         <div className="special-deal__head">
           <svg
