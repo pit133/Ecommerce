@@ -1,4 +1,6 @@
-
+.products {
+  padding-bottom: 32px;
+}
 .products__head{
   display: flex;
   justify-content: space-between;

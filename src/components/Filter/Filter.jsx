@@ -19,8 +19,8 @@ const Filter = (props) => {
           <div className="filter__input">
             <label>Price range</label>
             <div className="filter__input-price">
-              <Input placeholder="0"/>
-              <Input placeholder="5000"/>
+              <Input placeholder="0" isNumber={true}/>
+              <Input placeholder="5000" isNumber={true}/>
             </div>
           </div>
           <Button content="Apply Filters" />

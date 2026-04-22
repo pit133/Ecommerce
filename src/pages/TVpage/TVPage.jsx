@@ -5,6 +5,7 @@ import "./TVPage.css"
 import ProductSort from "../../components/ProductSort/ProductSort";
 
 import products from "../../data/products";
+import Footer from "../../components/Footer/Footer";
 
 const TVPage = (props) => {
   const {className} = props;
@@ -21,6 +22,7 @@ const TVPage = (props) => {
         </aside>
         <ProductSort className="productSort" selectLabel={"Sort by"} products={tvDevices}/>
       </main>
+      <Footer className="container" />
     </div>
   )
 }

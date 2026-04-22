@@ -1,0 +1,27 @@
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__section-item {
+  padding-bottom: 8px;
+  color: var(--color-gray);
+}
+
+.footer__section-subscribe {
+  display: flex;
+  gap: 8px;
+}
+
+.footer__section-input {
+  height: 42px;
+}
+
+.footer__section-button {
+  height: 42px;
+}
+
+.footer__top-border {
+  width: 100vw;
+  border: 1px solid var(--color-dark-gray);
+}

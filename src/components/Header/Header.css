@@ -30,7 +30,6 @@
 
 .header__list-link{
   color: var(--color-gray);
-  text-decoration: none;
 }
 
 .is-active{

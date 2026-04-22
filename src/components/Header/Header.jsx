@@ -1,5 +1,6 @@
 import "./Header.css"
 import IconButton from "../IconButton/IconButton";
+import Link from "../Link/Link";
 
 const Header = (props) => {
   return (
@@ -23,25 +24,13 @@ const Header = (props) => {
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li className="header__list-item">
-                <a
-                  href='#'
-                  className="header__list-link is-active"
-                >TV
-                </a>
+                <Link className="header__list-link is-active" content="TV" to="/" />
               </li>
               <li className="header__list-item">
-                <a
-                  href='#'
-                  className="header__list-link"
-                >Phone
-                </a>
+                <Link className="header__list-link" content="Phone" to="/" />
               </li>
               <li className="header__list-item">
-                <a
-                  href='#'
-                  className="header__list-link"
-                >Laptop
-                </a>
+                <Link className="header__list-link" content="Laptop" to="/" />
               </li>
             </ul>
           </nav>
