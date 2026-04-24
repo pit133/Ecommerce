@@ -1,6 +1,7 @@
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import "./Footer.css"
+import Link from "../Link/Link";
 
 const Footer = (props) => {
   const {className} = props
@@ -13,10 +14,27 @@ const Footer = (props) => {
           <h3>About</h3>
           <ul className="footer__section-list">
             <li className="footer__section-item">
-              About us
+              <Link
+                className="footer__section-link"
+                content="About us"
+                to="#"
+              />
             </li>
-            <li className="footer__section-item">Careers</li>
-            <li className="footer__section-item">Press</li>
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="Careers"
+                to="#"
+              />
+            </li>
+
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="Press"
+                to="#"
+              />
+            </li>
           </ul>
         </div>
 
@@ -24,10 +42,26 @@ const Footer = (props) => {
           <h3>Support</h3>
           <ul className="footer__section-list">
             <li className="footer__section-item">
-              Contact
+              <Link
+                className="footer__section-link"
+                content="Contact"
+                to="#"
+              />
             </li>
-            <li className="footer__section-item">FAQ</li>
-            <li className="footer__section-item">Shipping</li>
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="FAQ"
+                to="#"
+              />
+            </li>
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="Shipping"
+                to="#"
+              />
+            </li>
           </ul>
         </div>
 
@@ -35,10 +69,26 @@ const Footer = (props) => {
           <h3>Legal</h3>
           <ul className="footer__section-list">
             <li className="footer__section-item">
-              Privacy Policy
+              <Link
+                className="footer__section-link"
+                content="Privacy Policy"
+                to="#"
+              />
             </li>
-            <li className="footer__section-item">Terms of Services</li>
-            <li className="footer__section-item">Returns</li>
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="Terms of Services"
+                to="#"
+              />
+            </li>
+            <li className="footer__section-item">
+              <Link
+                className="footer__section-link"
+                content="Returns"
+                to="#"
+              />
+            </li>
           </ul>
         </div>
 
@@ -46,7 +96,11 @@ const Footer = (props) => {
           <h3>Newsletter</h3>
           <ul className="footer__section-list">
             <li className="footer__section-item">
-              Subscribe for exclusive deals
+              <Link
+                className="footer__section-link"
+                content="Subscribe for exclusive deals"
+                to="#"
+              />
             </li>
           </ul>
 

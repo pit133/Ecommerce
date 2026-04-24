@@ -8,6 +8,10 @@
   color: var(--color-gray);
 }
 
+.footer__section-link {
+  color: var(--color-gray);
+}
+
 .footer__section-subscribe {
   display: flex;
   gap: 8px;
