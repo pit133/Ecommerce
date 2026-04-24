@@ -50,6 +50,14 @@
   font-weight: bold;
   transition: all 0.3s ease;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product-card__image:hover .product-card__nav,
+.product-card__image:hover .product-card__counter-images {
+  opacity: 1;
+  visibility: visible;
 }
 
 .product-card__nav:hover {
@@ -64,6 +72,23 @@
 .product-card__nav--next {
   right: 15px;
 }
+
+.product-card__counter-images {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
 
 .product-card__like {
   position: absolute;

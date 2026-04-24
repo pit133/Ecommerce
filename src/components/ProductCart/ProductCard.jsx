@@ -61,7 +61,12 @@ const ProductCard = (props) => {
           >
             ›
           </button>
+
+          <div className="product-card__counter-images">
+            {currentImageIndex + 1} / {product.images.length}
+          </div>
         </>
+
       )}
       <button
         className={`product-card__like ${isLiked ? 'product-card__like--active' : ''}`}
@@ -97,8 +102,8 @@ const ProductCard = (props) => {
             strokeLinejoin="round"
           />
         </svg>}
-
       </button>
+
     </div>
     <div className="product-card__content">
       <h3 className="product-card__brand">{product.brand}</h3>
@@ -106,9 +111,17 @@ const ProductCard = (props) => {
       <div className="product-card__price">${product.price.toLocaleString('en-US')}</div>
 
       {addedCounter > 0 ? <div className="product-card__count">
-          <Button className="product-card__minus-button" content="-" onClick={decrement} />
+          <Button
+            className="product-card__minus-button"
+            content="-"
+            onClick={decrement}
+          />
           <div>{addedCounter} in cart</div>
-          <Button className="product-card__plus-button" content="+" onClick={increment} />
+          <Button
+            className="product-card__plus-button"
+            content="+"
+            onClick={increment}
+          />
         </div>
         :
         <Button
