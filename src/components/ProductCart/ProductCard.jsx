@@ -8,7 +8,9 @@ const ProductCard = (props) => {
   const [isLiked, setIsLiked] = useState(false);
   const [addedCounter, setAddedCounter] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const hasMultipleImages = product.images && product.images.length > 1;
+  const hasSpecialOffer = product.isSpecialOffer === true
 
   const nextImage = () => {
     if (product.images && product.images.length > 1) {
@@ -47,6 +49,7 @@ const ProductCard = (props) => {
         alt={product.title}
       />
 
+
       {hasMultipleImages && (
         <>
           <button
@@ -68,6 +71,11 @@ const ProductCard = (props) => {
         </>
 
       )}
+
+      {hasSpecialOffer && (
+        <div className="product-card__special-offer">Special offer</div>
+      )}
+
       <button
         className={`product-card__like ${isLiked ? 'product-card__like--active' : ''}`}
         onClick={handleLike}

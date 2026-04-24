@@ -89,6 +89,22 @@
   transition: all 0.3s ease;
 }
 
+.product-card__special-offer{
+  position: absolute;
+  left: 10px;
+  top:10px;
+  width: 86px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  font-size: 12px;
+  font-weight: 400;
+}
+
 
 .product-card__like {
   position: absolute;
