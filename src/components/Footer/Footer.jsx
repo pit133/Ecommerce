@@ -116,6 +116,8 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
+      <div className="footer__bottom-border"></div>
+      <div className="footer__copyright">© 2026 TechStore. All rights reserved.</div>
     </footer>
   )
 }
