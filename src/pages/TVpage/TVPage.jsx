@@ -20,7 +20,7 @@ const TVPage = (props) => {
           <Filter selectOptions = {tvBrands}/>
           <SpecialDeal time={"0:53:50"} />
         </aside>
-        <ProductSort className="productSort" selectLabel={"Sort by"} products={tvDevices}/>
+        <ProductSort className="productSort" selectLabel={"Sort by:"} products={tvDevices}/>
       </main>
       <Footer className="container" />
     </div>

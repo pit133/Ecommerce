@@ -3,9 +3,28 @@ import Button from '../Button/Button';
 import {useState} from 'react';
 
 const ProductCard = (props) => {
+
   const {product, onAddToCart, onLike} = props;
   const [isLiked, setIsLiked] = useState(false);
   const [addedCounter, setAddedCounter] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasMultipleImages = product.images && product.images.length > 1;
+
+  const nextImage = () => {
+    if (product.images && product.images.length > 1) {
+      setCurrentImageIndex((prev) =>
+        prev === product.images.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (product.images && product.images.length > 1) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? product.images.length - 1 : prev - 1
+      );
+    }
+  };
 
   const handleLike = () => {
     setIsLiked(!isLiked);
@@ -24,9 +43,26 @@ const ProductCard = (props) => {
   return (<div className="product-card">
     <div className="product-card__image">
       <img
-        src={product.images[0]}
+        src={product.images[currentImageIndex]}
         alt={product.title}
       />
+
+      {hasMultipleImages && (
+        <>
+          <button
+            className="product-card__nav product-card__nav--prev"
+            onClick={prevImage}
+          >
+            ‹
+          </button>
+          <button
+            className="product-card__nav product-card__nav--next"
+            onClick={nextImage}
+          >
+            ›
+          </button>
+        </>
+      )}
       <button
         className={`product-card__like ${isLiked ? 'product-card__like--active' : ''}`}
         onClick={handleLike}

@@ -4,8 +4,7 @@ const Select = (props) => {
   const {className, label, options} = props
 
   return (
-    <>
-      <label>{label}</label>
+    <div className="select-container">
       <select className={`select ${className}`} id="label" name="label">
         <option className="hidden" value=""></option>
         {/*<option className="hidden" value="">Выберите вариант</option>*/}
@@ -15,7 +14,7 @@ const Select = (props) => {
           </option>
         ))}
       </select>
-    </>
+    </div>
   )
 }
 

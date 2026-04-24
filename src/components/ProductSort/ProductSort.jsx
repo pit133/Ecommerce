@@ -3,16 +3,16 @@ import Select from "../Select/Select";
 import "./ProductSort.css"
 
 const ProductSort = (props) => {
-  const { className, selectLabel, selectOptions, products = [] } = props;
+  const { className, selectOptions, products = [] } = props;
 
   return (
     <section className={`${className} products`}>
       <div className="products__head">
         <p className="products__count">{products.length} products</p>
         <form className="products__head-form">
+          <div>Sort by: </div>
           <Select
             className="products__select"
-            label={selectLabel}
             options={selectOptions}
           />
         </form>
@@ -23,8 +23,6 @@ const ProductSort = (props) => {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={() => console.log('Added:', product)}
-              onLike={(isLiked) => console.log('Liked:', isLiked)}
             />
           ))
         ) : (

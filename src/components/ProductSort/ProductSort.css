@@ -4,7 +4,14 @@
 .products__head{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 24px;
+}
+
+.products__head-form{
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .products__select{

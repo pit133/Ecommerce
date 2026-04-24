@@ -1,6 +1,12 @@
 .header {
 
 }
+
+.header__logo-link{
+  text-decoration: none;
+  color: var(--color-black);
+}
+
 .header__container {
   padding: 16px 32px 16px 32px;
   display: flex;

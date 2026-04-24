@@ -16,18 +16,23 @@
 
 .filter__select{
   height: 42px;
+  width: 222px;
 }
 
 .filter__input {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: start;
   gap: 8px;
 }
 
 .filter__input-price {
   display: flex;
   gap: 8px;
+}
+
+.filter__input-field{
+  height: 42px;
 }
 
 
