@@ -1,4 +1,3 @@
-import products from "../../data/products";
 import Filter from "../../components/Filter/Filter";
 import SpecialDeal from "../../components/SpecialDeal/SpecialDeal";
 import ProductSort from "../../components/ProductSort/ProductSort";
@@ -6,9 +5,8 @@ import ProductSort from "../../components/ProductSort/ProductSort";
 import "./LaptopListing.css"
 
 const LaptopListing = (props) => {
-  const {className} = props;
-  const laptopDevices = products.filter(product => product.category === "laptop")
-  const laptopBrands = [...new Set(laptopDevices.map(product => product.brand))];
+  const {className, products} = props;
+  const laptopBrands = [...new Set(products.map(product => product.brand))];
 
   return (
     <div className="laptop-listing">
@@ -17,7 +15,7 @@ const LaptopListing = (props) => {
           <Filter selectOptions = {laptopBrands}/>
           <SpecialDeal time={"0:59:59"} />
         </aside>
-        <ProductSort className="productSort" selectLabel={"Sort by:"} selectOptions={["Price: High to Low","Price: Low to High"]} products={laptopDevices}/>
+        <ProductSort className="productSort" selectLabel={"Sort by:"} selectOptions={["Price: High to Low","Price: Low to High"]} products={products}/>
       </main>
     </div>
   )

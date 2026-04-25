@@ -3,13 +3,12 @@ import SpecialDeal from "../../components/SpecialDeal/SpecialDeal";
 import "./PhoneListing.css"
 import ProductSort from "../../components/ProductSort/ProductSort";
 
-import products from "../../data/products";
 
 
 const PhoneListing = (props) => {
-  const {className} = props;
-  const phoneDevices = products.filter(product => product.category === "phone")
-  const phoneBrands = [...new Set(phoneDevices.map(product => product.brand))];
+  const {className, products} = props;
+  // const phoneDevices = products.filter(product => product.category === "phone")
+  const phoneBrands = [...new Set(products.map(product => product.brand))];
 
   return (
     <div className="laptop-listing">
@@ -18,7 +17,7 @@ const PhoneListing = (props) => {
           <Filter selectOptions = {phoneBrands}/>
           <SpecialDeal time={"0:59:59"} />
         </aside>
-        <ProductSort className="productSort" selectLabel={"Sort by:"} selectOptions={["Price: High to Low","Price: Low to High"]} products={phoneDevices}/>
+        <ProductSort className="productSort" selectLabel={"Sort by:"} selectOptions={["Price: High to Low","Price: Low to High"]} products={products}/>
       </main>
     </div>
   )
