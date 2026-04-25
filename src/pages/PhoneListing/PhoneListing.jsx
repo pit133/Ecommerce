@@ -12,7 +12,7 @@ const PhoneListing = (props) => {
   const phoneBrands = [...new Set(phoneDevices.map(product => product.brand))];
 
   return (
-    <div className="phone-listing">
+    <div className="laptop-listing">
       <main className="container main">
         <aside className="aside">
           <Filter selectOptions = {phoneBrands}/>

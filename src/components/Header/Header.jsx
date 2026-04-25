@@ -58,6 +58,7 @@ const Header = (props) => {
                   className={`header__list-link ${currentPage === "laptop" ? "is-active" : ""}`}
                   content="Laptop"
                   to="/laptop"
+                  onClick={() => onClickedLink("laptop")}
                 />
               </li>
             </ul>
