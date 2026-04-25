@@ -3,6 +3,13 @@ import IconButton from "../IconButton/IconButton";
 import Link from "../Link/Link";
 
 const Header = (props) => {
+  const {currentPage, onClickLink} = props;
+
+
+  const onClickedLink = (link) => {
+    onClickLink(link);
+  }
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -10,7 +17,7 @@ const Header = (props) => {
           <div className="header__logo">
             <Link
               className="header__logo-link"
-              to="/"
+              to="/tv"
               content={
               <svg
                 width="111"
@@ -32,23 +39,25 @@ const Header = (props) => {
             <ul className="header__nav-list">
               <li className="header__list-item">
                 <Link
-                  className="header__list-link is-active"
+                  className={`header__list-link ${currentPage === "tv" ? "is-active" : ""}`}
                   content="TV"
-                  to="/"
+                  to="/tv"
+                  onClick={() => onClickedLink("tv")}
                 />
               </li>
               <li className="header__list-item">
                 <Link
-                  className="header__list-link"
+                  className={`header__list-link ${currentPage === "phone" ? "is-active" : ""}`}
                   content="Phone"
-                  to="/"
+                  to="/phone"
+                  onClick={() => onClickedLink("phone")}
                 />
               </li>
               <li className="header__list-item">
                 <Link
-                  className="header__list-link"
+                  className={`header__list-link ${currentPage === "laptop" ? "is-active" : ""}`}
                   content="Laptop"
-                  to="/"
+                  to="/laptop"
                 />
               </li>
             </ul>
