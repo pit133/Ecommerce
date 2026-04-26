@@ -5,17 +5,24 @@ import ProductSort from "../../components/ProductSort/ProductSort";
 import "./LaptopListing.css"
 
 const LaptopListing = (props) => {
-  const {className, products} = props;
+  const {className, products, onAddToCart, onRemoveFromCart} = props;
   const laptopBrands = [...new Set(products.map(product => product.brand))];
 
   return (
     <div className="laptop-listing">
       <main className="container main">
         <aside className="aside">
-          <Filter selectOptions = {laptopBrands}/>
+          <Filter selectOptions={laptopBrands} />
           <SpecialDeal time={"0:59:59"} />
         </aside>
-        <ProductSort className="productSort" selectLabel={"Sort by:"} selectOptions={["Price: High to Low","Price: Low to High"]} products={products}/>
+        <ProductSort
+          className="productSort"
+          selectLabel={"Sort by:"}
+          selectOptions={["Price: High to Low", "Price: Low to High"]}
+          products={products}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
+        />
       </main>
     </div>
   )

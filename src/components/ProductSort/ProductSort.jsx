@@ -3,7 +3,7 @@ import Select from "../Select/Select";
 import "./ProductSort.css"
 
 const ProductSort = (props) => {
-  const { className, selectOptions, products = [] } = props;
+  const { className, selectOptions, products = [], onAddToCart, onRemoveFromCart } = props;
 
   return (
     <section className={`${className} products`}>
@@ -23,6 +23,8 @@ const ProductSort = (props) => {
             <ProductCard
               key={product.id}
               product={product}
+              onAddToCart={onAddToCart}
+              onRemoveFromCart={onRemoveFromCart}
             />
           ))
         ) : (

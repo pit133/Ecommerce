@@ -82,6 +82,8 @@ const Header = (props) => {
                 strokeLinejoin="round"
               />
             </svg>}
+            to = "/cart"
+            onClick={() => onClickedLink("cart")}
           />
           <IconButton
             className='header__icon'

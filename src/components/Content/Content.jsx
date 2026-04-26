@@ -2,30 +2,16 @@ import TVListing from "../../pages/TVListing/TVListing";
 import PhoneListing from "../../pages/PhoneListing/PhoneListing";
 import LaptopListing from "../../pages/LaptopListing/LaptopListing";
 import Cart from "../../pages/Cart/Cart";
-import {useEffect} from "react";
 
 
 const Content = (props) => {
-  const {pageType, products, onClickButtonShopping} = props
-
-  let filteredProducts = null
-
-  const filterProducts = (pageType) => {
-
-    if (pageType === "tv") {
-      return products.filter(product => product.category === "tv")
-    }
-
-    if (pageType === "phone") {
-      return products.filter(product => product.category === "phone")
-    }
-
-    if (pageType === "laptop") {
-      return products.filter(product => product.category === "laptop")
-    }
-  }
-
-  filteredProducts = filterProducts(pageType);
+  const {
+    pageType,
+    products,
+    onClickButtonShopping,
+    onAddToCart,
+    onRemoveFromCart
+  } = props
 
   const onClickedButtonShopping = () => {
     onClickButtonShopping("tv")
@@ -33,11 +19,26 @@ const Content = (props) => {
 
   return (
     <>
-      {pageType === "tv" && (<TVListing products={filteredProducts} />)}
-      {pageType === "phone" && (<PhoneListing products={filteredProducts} />)}
-      {pageType === "laptop" && (<LaptopListing products={filteredProducts} />)}
+      {pageType === "tv" && (<TVListing
+        products={products}
+        onAddToCart={onAddToCart}
+        onRemoveFromCart={onRemoveFromCart}
+      />)}
+      {pageType === "phone" && (<PhoneListing
+        products={products}
+        onAddToCart={onAddToCart}
+        onRemoveFromCart={onRemoveFromCart}
+      />)}
+      {pageType === "laptop" && (<LaptopListing
+        products={products}
+        onAddToCart={onAddToCart}
+        onRemoveFromCart={onRemoveFromCart}
+      />)}
       {pageType === "cart" && (
-        <Cart onClickedButtonShopping={onClickedButtonShopping} />)}
+        <Cart
+          products={products}
+          onClickedButtonShopping={onClickedButtonShopping}
+        />)}
     </>
   )
 }

@@ -9,7 +9,7 @@ const Link = (props) => {
   };
 
   return (
-    <a href={to} className={`link ${className} `} onClick={handleClick}>{content}</a>
+    <a className={`link ${className}`} href={to}  onClick={handleClick}>{content}</a>
   )
 }
 
