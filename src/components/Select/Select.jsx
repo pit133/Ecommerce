@@ -1,21 +1,25 @@
 import "./Select.css"
-const Select = (props) => {
 
-  const {className, label, options} = props
+const Select = (props) => {
+  const { className, label, options, value, onChange } = props;
 
   return (
-    <div className="select-container">
-      <select className={`select ${className}`} id="label" name="label">
-        <option className="hidden" value=""></option>
-        {/*<option className="hidden" value="">Выберите вариант</option>*/}
+    <div className="select-wrapper">
+      {label && <label>{label}</label>}
+      <select
+        className={`select ${className || ''}`}
+        value={value || ''}
+        onChange={onChange}
+      >
+        {/*<option value="">All Brands</option>*/}
         {options?.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option key={option.value || option} value={option.value || option}>
+            {option.label || option}
           </option>
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
 export default Select;

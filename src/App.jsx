@@ -1,9 +1,9 @@
-import TVPage from "./pages/TVpage/TVPage";
+
+import Container from "./components/Container/Container";
 const App = () => {
   return (
     <div>
-      <TVPage />
-
+      <Container />
     </div>
   )
 }

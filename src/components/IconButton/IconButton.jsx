@@ -1,12 +1,21 @@
 import './IconButton.css'
 
 const IconButton = (props) => {
+  const {icon, to, onClick} = props;
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    onClick()
+  };
+
   return (
-    <div className='iconButton'>
-      <a className="iconButton-link"
-        href="#"
+    <div className='header__icon-link'>
+      <a
+        className="iconButton-link"
+        href={to}
+        onClick={handleClick}
       >
-        {props.icon}
+        {icon}
       </a>
     </div>
   )

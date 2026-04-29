@@ -4,9 +4,8 @@ import {useState} from 'react';
 
 const ProductCard = (props) => {
 
-  const {product, onAddToCart, onLike} = props;
+  const {product, onAddToCart, onRemoveFromCart, onLike} = props;
   const [isLiked, setIsLiked] = useState(false);
-  const [addedCounter, setAddedCounter] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const hasMultipleImages = product.images && product.images.length > 1;
@@ -31,16 +30,6 @@ const ProductCard = (props) => {
   const handleLike = () => {
     setIsLiked(!isLiked);
   };
-
-  const increment = () => {
-    let newCount = addedCounter + 1;
-    setAddedCounter(newCount);
-  }
-
-  const decrement = () => {
-    let newCount = addedCounter - 1;
-    setAddedCounter(newCount);
-  }
 
   return (<div className="product-card">
     <div className="product-card__image">
@@ -118,23 +107,23 @@ const ProductCard = (props) => {
       <h2 className="product-card__title">{product.model}</h2>
       <div className="product-card__price">${product.price.toLocaleString('en-US')}</div>
 
-      {addedCounter > 0 ? <div className="product-card__count">
+      {product.cartItemCount > 0 ? <div className="product-card__count">
           <Button
             className="product-card__minus-button"
             content="-"
-            onClick={decrement}
+            onClick={() => onRemoveFromCart(product.id)}
           />
-          <div>{addedCounter} in cart</div>
+          <div>{product.cartItemCount} in cart</div>
           <Button
             className="product-card__plus-button"
             content="+"
-            onClick={increment}
+            onClick={() => onAddToCart(product.id)}
           />
         </div>
         :
         <Button
           content="Add to Cart"
-          onClick={increment}
+          onClick={() => onAddToCart(product.id)}
         />}
     </div>
   </div>);
