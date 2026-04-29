@@ -3,38 +3,55 @@ import PhoneListing from "../../pages/PhoneListing/PhoneListing";
 import LaptopListing from "../../pages/LaptopListing/LaptopListing";
 import Cart from "../../pages/Cart/Cart";
 
-
 const Content = (props) => {
   const {
     pageType,
     products,
+    brands,
+    filters,
     onClickButtonShopping,
     onAddToCart,
     onRemoveFromCart,
     onRemoveProductFromCart,
-  } = props
+    onApplyFilters
+  } = props;
 
   const onClickedButtonShopping = () => {
-    onClickButtonShopping("tv")
-  }
+    onClickButtonShopping("tv");
+  };
 
   return (
     <>
-      {pageType === "tv" && (<TVListing
-        products={products}
-        onAddToCart={onAddToCart}
-        onRemoveFromCart={onRemoveFromCart}
-      />)}
-      {pageType === "phone" && (<PhoneListing
-        products={products}
-        onAddToCart={onAddToCart}
-        onRemoveFromCart={onRemoveFromCart}
-      />)}
-      {pageType === "laptop" && (<LaptopListing
-        products={products}
-        onAddToCart={onAddToCart}
-        onRemoveFromCart={onRemoveFromCart}
-      />)}
+      {pageType === "tv" && (
+        <TVListing
+          products={products}
+          brands={brands}
+          filters={filters}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
+          onApplyFilters={onApplyFilters}
+        />
+      )}
+      {pageType === "phone" && (
+        <PhoneListing
+          products={products}
+          brands={brands}
+          filters={filters}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
+          onApplyFilters={onApplyFilters}
+        />
+      )}
+      {pageType === "laptop" && (
+        <LaptopListing
+          products={products}
+          brands={brands}
+          filters={filters}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
+          onApplyFilters={onApplyFilters}
+        />
+      )}
       {pageType === "cart" && (
         <Cart
           products={products}
@@ -42,9 +59,10 @@ const Content = (props) => {
           onAddToCart={onAddToCart}
           onRemoveFromCart={onRemoveFromCart}
           onRemoveProductFromCart={onRemoveProductFromCart}
-        />)}
+        />
+      )}
     </>
-  )
-}
+  );
+};
 
 export default Content;

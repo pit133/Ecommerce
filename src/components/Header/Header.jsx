@@ -29,6 +29,7 @@ const Header = (props) => {
                 fill="#0A0A0A"
               />
             </svg>}
+            onClick={() => onClickedLink("tv")}
           />
 
         </div>

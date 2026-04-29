@@ -40,7 +40,6 @@ const Cart = (props) => {
 
       {products && products.length > 0 ? (
         <div className="cart__wrapper">
-          {/* Список товаров */}
           <div className="cart__products">
             {products.map((product) => (
               <div key={product.id} className="cart__product-card">
