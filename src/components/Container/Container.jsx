@@ -5,8 +5,8 @@ import {useState} from "react";
 import products from "../../data/products";
 
 const Container = () => {
-  const [pageType, setPageType] = useState("tv");
-  const [cartProducts, setCartProducts] = useState([]);
+  const [pageType, setPageType] = useState("tv")
+  const [cartProducts, setCartProducts] = useState([])
 
   const handleAddToCart = (id) => {
     const itemInCart = cartProducts.find(item => item.id === id);
@@ -15,24 +15,28 @@ const Container = () => {
       setCartProducts(cartProducts.map(item => item.id === id ? {
         ...item,
         count: item.count + 1
-      } : item));
+      } : item))
     } else {
-      setCartProducts([...cartProducts, {id: id, count: 1}]);
+      setCartProducts([...cartProducts, {id: id, count: 1}])
     }
   }
 
   const handleRemoveFromCart = (id) => {
-    const itemInCart = cartProducts.find(item => item.id === id);
+    const itemInCart = cartProducts.find(item => item.id === id)
 
     if (itemInCart.count === 1) {
-      setCartProducts(cartProducts.filter(item => item.id !== id));
+      setCartProducts(cartProducts.filter(item => item.id !== id))
     } else {
       setCartProducts(cartProducts.map(item => item.id === id ? {
         ...item,
         count: item.count - 1
-      } : item));
+      } : item))
     }
-  };
+  }
+
+  const handleRemoveProductFromCart = (id) => {
+    setCartProducts(cartProducts.filter(item => item.id !== id))
+  }
 
 
   const onClickedLink = (link) => {
@@ -90,6 +94,7 @@ const Container = () => {
         products={filteredProducts}
         onAddToCart={handleAddToCart}
         onRemoveFromCart={handleRemoveFromCart}
+        onRemoveProductFromCart={handleRemoveProductFromCart}
       />
 
       <Footer className="container" />

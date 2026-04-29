@@ -8,26 +8,24 @@ const Cart = (props) => {
     products,
     onClickedButtonShopping,
     onAddToCart,
-    onRemoveFromCart
+    onRemoveFromCart,
+    onRemoveProductFromCart
   } = props;
 
   const handleContinueShopping = () => {
     onClickedButtonShopping();
   };
 
-  // Вычисление subtotal
   const calculateSubtotal = () => {
     return products.reduce((total, product) => {
       return total + (product.price * (product.cartItemCount || 1));
     }, 0);
   };
 
-  // Вычисление tax (8%)
   const calculateTax = (subtotal) => {
     return subtotal * 0.08;
   };
 
-  // Вычисление total
   const calculateTotal = (subtotal, tax) => {
     return subtotal + tax;
   };
@@ -58,8 +56,9 @@ const Cart = (props) => {
                       <h3 className="cart__card-simple-brand">{product.brand}</h3>
                       <h2 className="cart-product-card-title">{product.model}</h2>
                     </div>
-                    <IconButton
-                      icon={
+                    <Button
+                      className="cart__product-del-button"
+                      content={
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path d="M2 4H14" stroke="#D4183D" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M12.6666 4V13.3333C12.6666 14 11.9999 14.6667 11.3333 14.6667H4.66659C3.99992 14.6667 3.33325 14 3.33325 13.3333V4" stroke="#D4183D" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
@@ -68,6 +67,7 @@ const Cart = (props) => {
                           <path d="M9.33325 7.33301V11.333" stroke="#D4183D" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       }
+                      onClick={() => onRemoveProductFromCart(product.id)}
                     />
                   </div>
                   <p className="cart__product-card-price">${(product.price * (product.cartItemCount || 1)).toLocaleString('en-US')}</p>

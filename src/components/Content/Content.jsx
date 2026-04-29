@@ -10,7 +10,8 @@ const Content = (props) => {
     products,
     onClickButtonShopping,
     onAddToCart,
-    onRemoveFromCart
+    onRemoveFromCart,
+    onRemoveProductFromCart,
   } = props
 
   const onClickedButtonShopping = () => {
@@ -40,6 +41,7 @@ const Content = (props) => {
           onClickedButtonShopping={onClickedButtonShopping}
           onAddToCart={onAddToCart}
           onRemoveFromCart={onRemoveFromCart}
+          onRemoveProductFromCart={onRemoveProductFromCart}
         />)}
     </>
   )
