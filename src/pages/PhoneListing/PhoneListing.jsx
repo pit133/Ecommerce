@@ -5,8 +5,7 @@ import ProductSort from "../../components/ProductSort/ProductSort";
 
 
 const PhoneListing = (props) => {
-  const {className, products, onAddToCart} = props;
-  // const phoneDevices = products.filter(product => product.category === "phone")
+  const {className, products, onAddToCart, onRemoveFromCart} = props;
   const phoneBrands = [...new Set(products.map(product => product.brand))];
 
   const onAddedToCart = (id, count) => {
@@ -26,6 +25,7 @@ const PhoneListing = (props) => {
           selectOptions={["Price: High to Low", "Price: Low to High"]}
           products={products}
           onAddToCart={onAddedToCart}
+          onRemoveFromCart={onRemoveFromCart}
         />
       </main>
     </div>

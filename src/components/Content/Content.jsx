@@ -38,6 +38,8 @@ const Content = (props) => {
         <Cart
           products={products}
           onClickedButtonShopping={onClickedButtonShopping}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
         />)}
     </>
   )
