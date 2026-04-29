@@ -3,17 +3,33 @@ import Select from "../Select/Select";
 import "./ProductSort.css"
 
 const ProductSort = (props) => {
-  const { className, selectOptions, products = [], onAddToCart, onRemoveFromCart } = props;
+  const {
+    className,
+    selectOptions,
+    products = [],
+    sortType,
+    onAddToCart,
+    onRemoveFromCart,
+    onSortChange
+  } = props;
+
+  const handleSortChange = (e) => {
+    if (onSortChange) {
+      onSortChange(e.target.value);
+    }
+  };
 
   return (
     <section className={`${className} products`}>
       <div className="products__head">
         <p className="products__count">{products.length} products</p>
         <form className="products__head-form">
-          <div>Sort by: </div>
+          <div>Sort by:</div>
           <Select
             className="products__select"
             options={selectOptions}
+            value={sortType}
+            onChange={handleSortChange}
           />
         </form>
       </div>

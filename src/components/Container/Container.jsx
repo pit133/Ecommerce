@@ -1,7 +1,7 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Content from "../Content/Content";
-import { useState, useEffect, useMemo } from "react";
+import {useState, useEffect, useMemo} from "react";
 import products from "../../data/products";
 
 const Container = () => {
@@ -11,8 +11,9 @@ const Container = () => {
   const [filters, setFilters] = useState({
     brand: "All brands",
     minPrice: 0,
-    maxPrice: Infinity
+    maxPrice: 5000
   });
+  const [sortType, setSortType] = useState("Price: Low to High");
 
   const calculateTotalCount = (cartItems) => {
     return cartItems.reduce((total, item) => total + item.count, 0);
@@ -28,10 +29,10 @@ const Container = () => {
       const itemInCart = prev.find(item => item.id === id);
       if (itemInCart) {
         return prev.map(item =>
-          item.id === id ? { ...item, count: item.count + 1 } : item
+          item.id === id ? {...item, count: item.count + 1} : item
         );
       } else {
-        return [...prev, { id: id, count: 1 }];
+        return [...prev, {id: id, count: 1}];
       }
     });
   };
@@ -43,7 +44,7 @@ const Container = () => {
         return prev.filter(item => item.id !== id);
       } else {
         return prev.map(item =>
-          item.id === id ? { ...item, count: item.count - 1 } : item
+          item.id === id ? {...item, count: item.count - 1} : item
         );
       }
     });
@@ -58,7 +59,7 @@ const Container = () => {
     setFilters({
       brand: "All brands",
       minPrice: 0,
-      maxPrice: Infinity
+      maxPrice: 5000
     });
   };
 
@@ -69,6 +70,10 @@ const Container = () => {
   const handleApplyFilters = (newFilters) => {
     setFilters(newFilters);
   };
+
+  const handleSortChange = (newSort) => {
+    setSortType(newSort);
+  }
 
   const getBaseProductsByCategory = (type) => {
     if (type === "tv") {
@@ -114,15 +119,24 @@ const Container = () => {
 
   const getFinalProducts = useMemo(() => {
     const baseProducts = getBaseProductsByCategory(pageType);
+
     if (pageType === "cart") {
       return enrichProductsWithCart(baseProducts);
     }
 
     const filteredProducts = filterProductsByFilters(baseProducts);
-    const enrichedProducts = enrichProductsWithCart(filteredProducts)
+    const enrichedProducts = enrichProductsWithCart(filteredProducts);
 
-    return enrichedProducts;
-  }, [pageType, cartProducts, filters]);
+    let sortedEnrichedProducts = [...enrichedProducts];
+
+    if (sortType === "Price: Low to High") {
+      sortedEnrichedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortType === "Price: High to Low") {
+      sortedEnrichedProducts.sort((a, b) => b.price - a.price);
+    }
+    return sortedEnrichedProducts;
+
+  }, [pageType, cartProducts, filters, sortType]);
 
   const currentBrands = useMemo(() => {
     if (pageType === "cart") return [];
@@ -142,11 +156,13 @@ const Container = () => {
         products={getFinalProducts}
         brands={currentBrands}
         filters={filters}
+        sortType={sortType}
         onClickButtonShopping={onClickedButtonShopping}
         onAddToCart={handleAddToCart}
         onRemoveFromCart={handleRemoveFromCart}
         onRemoveProductFromCart={handleRemoveProductFromCart}
         onApplyFilters={handleApplyFilters}
+        onSortChange={handleSortChange}
       />
       <Footer className="container" />
     </>

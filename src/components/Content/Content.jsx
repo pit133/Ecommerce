@@ -9,11 +9,13 @@ const Content = (props) => {
     products,
     brands,
     filters,
+    sortType,
     onClickButtonShopping,
     onAddToCart,
     onRemoveFromCart,
     onRemoveProductFromCart,
-    onApplyFilters
+    onApplyFilters,
+    onSortChange,
   } = props;
 
   const onClickedButtonShopping = () => {
@@ -27,9 +29,11 @@ const Content = (props) => {
           products={products}
           brands={brands}
           filters={filters}
+          sortType={sortType}
           onAddToCart={onAddToCart}
           onRemoveFromCart={onRemoveFromCart}
           onApplyFilters={onApplyFilters}
+          onSortChange={onSortChange}
         />
       )}
       {pageType === "phone" && (

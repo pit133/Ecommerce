@@ -8,14 +8,14 @@ const Filter = (props) => {
   const { className, selectOptions, onApplyFilters, initialFilters } = props;
 
   const [minPrice, setMinPrice] = useState(initialFilters?.minPrice || "");
-  const [maxPrice, setMaxPrice] = useState(initialFilters?.maxPrice > Infinity ? "" : initialFilters?.maxPrice || "");
+  const [maxPrice, setMaxPrice] = useState(initialFilters?.maxPrice > 5000 ? "5000" : initialFilters?.maxPrice);
   const [selectedBrand, setSelectedBrand] = useState(initialFilters?.brand || "All brands");
 
   useEffect(() => {
     if (initialFilters) {
       setSelectedBrand(initialFilters.brand || "All brands");
       setMinPrice(initialFilters.minPrice || "");
-      setMaxPrice(initialFilters.maxPrice > 5000 ? "" : initialFilters.maxPrice || "");
+      setMaxPrice(initialFilters.maxPrice > 5000 ? "5000" : initialFilters.maxPrice);
     }
   }, [initialFilters]);
 

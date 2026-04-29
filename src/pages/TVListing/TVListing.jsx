@@ -8,9 +8,11 @@ const TVListing = (props) => {
     products,
     brands,
     filters,
+    sortType,
     onAddToCart,
     onRemoveFromCart,
-    onApplyFilters
+    onApplyFilters,
+    onSortChange,
   } = props;
 
   return (
@@ -27,10 +29,12 @@ const TVListing = (props) => {
         <ProductSort
           className="productSort"
           selectLabel="Sort by:"
-          selectOptions={["Price: High to Low", "Price: Low to High"]}
+          selectOptions={["Price: Low to High", "Price: High to Low" ]}
           products={products}
+          sortType={sortType}
           onAddToCart={onAddToCart}
           onRemoveFromCart={onRemoveFromCart}
+          onSortChange={onSortChange}
         />
       </main>
     </div>
